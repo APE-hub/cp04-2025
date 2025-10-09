@@ -178,7 +178,7 @@
         var active = false;
         var startTime = 0;
         var period = 0;
-        var rest = 0;　
+        var rest = 0;
         var etime = 0;
     }
     
@@ -215,7 +215,13 @@
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
+            if (rest <= 0) {
+                active = false;
+                alarm();
+            }
+
         }
+
     } 
 
   </script>
