@@ -216,6 +216,21 @@
             $("#time").html("経過時間： " + etime);
             $("#remain").html("残り時間： " + rest);
             analog(rest);
+            if (rest <= 5){
+                if (rest % 2 == 0){
+                    $("body").css("background-color", "red");
+                }else{
+                    $("body").css("background-color", "black");
+                }
+            }else if(rest <= 10){
+                if (rest % 2 == 0){
+                    $("body").css("background-color", "red");
+                }else{
+                    $("body").css("background-color", "white");
+                }
+            }else{
+                $("body").css("background-color", "green");
+            }
             if (rest <= 0) {
                 active = false;
                 alarm();
